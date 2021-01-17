@@ -16,6 +16,7 @@
  */
 package org.apache.dubbo.rpc.proxy;
 
+import com.alibaba.dubbo.rpc.service.EchoService;
 import org.apache.dubbo.common.utils.ReflectUtils;
 import org.apache.dubbo.rpc.Constants;
 import org.apache.dubbo.rpc.Invoker;
@@ -23,8 +24,6 @@ import org.apache.dubbo.rpc.ProxyFactory;
 import org.apache.dubbo.rpc.RpcException;
 import org.apache.dubbo.rpc.service.Destroyable;
 import org.apache.dubbo.rpc.service.GenericService;
-
-import com.alibaba.dubbo.rpc.service.EchoService;
 
 import java.util.Arrays;
 import java.util.HashSet;

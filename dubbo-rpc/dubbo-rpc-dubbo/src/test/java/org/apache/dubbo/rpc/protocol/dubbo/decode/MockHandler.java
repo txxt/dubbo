@@ -16,10 +16,9 @@
  */
 package org.apache.dubbo.rpc.protocol.dubbo.decode;
 
-import org.apache.dubbo.remoting.ChannelHandler;
-
 import io.netty.channel.ChannelDuplexHandler;
 import io.netty.channel.ChannelHandlerContext;
+import org.apache.dubbo.remoting.ChannelHandler;
 
 import java.util.function.Consumer;
 

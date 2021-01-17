@@ -16,9 +16,8 @@
  */
 package org.apache.dubbo.rpc.protocol.dubbo.decode;
 
-import org.apache.dubbo.common.utils.NetUtils;
-
 import io.netty.channel.embedded.EmbeddedChannel;
+import org.apache.dubbo.common.utils.NetUtils;
 
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;

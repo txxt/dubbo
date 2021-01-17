@@ -16,15 +16,14 @@
  */
 package org.apache.dubbo.rpc.protocol.grpc;
 
+import io.grpc.Status;
+import io.grpc.StatusException;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.rpc.Invocation;
 import org.apache.dubbo.rpc.Invoker;
 import org.apache.dubbo.rpc.Result;
 import org.apache.dubbo.rpc.RpcException;
 import org.apache.dubbo.rpc.protocol.AbstractInvoker;
-
-import io.grpc.Status;
-import io.grpc.StatusException;
 
 import java.util.concurrent.locks.ReentrantLock;
 

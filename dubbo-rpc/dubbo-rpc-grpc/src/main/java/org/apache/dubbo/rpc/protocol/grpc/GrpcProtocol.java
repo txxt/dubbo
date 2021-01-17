@@ -16,6 +16,8 @@
  */
 package org.apache.dubbo.rpc.protocol.grpc;
 
+import io.grpc.*;
+import io.grpc.netty.NettyServerBuilder;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.common.logger.Logger;
 import org.apache.dubbo.common.logger.LoggerFactory;
@@ -27,13 +29,6 @@ import org.apache.dubbo.rpc.model.ApplicationModel;
 import org.apache.dubbo.rpc.model.ProviderModel;
 import org.apache.dubbo.rpc.model.ServiceRepository;
 import org.apache.dubbo.rpc.protocol.AbstractProxyProtocol;
-
-import io.grpc.BindableService;
-import io.grpc.CallOptions;
-import io.grpc.Channel;
-import io.grpc.ManagedChannel;
-import io.grpc.Server;
-import io.grpc.netty.NettyServerBuilder;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;

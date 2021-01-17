@@ -16,6 +16,15 @@
  */
 package org.apache.dubbo.rpc.protocol.grpc;
 
+import io.grpc.CallOptions;
+import io.grpc.ManagedChannel;
+import io.grpc.ServerBuilder;
+import io.grpc.netty.GrpcSslContexts;
+import io.grpc.netty.NettyChannelBuilder;
+import io.grpc.netty.NettyServerBuilder;
+import io.netty.handler.ssl.ClientAuth;
+import io.netty.handler.ssl.SslContext;
+import io.netty.handler.ssl.SslContextBuilder;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.common.extension.ExtensionLoader;
 import org.apache.dubbo.common.threadpool.ThreadPool;
@@ -28,16 +37,6 @@ import org.apache.dubbo.rpc.protocol.grpc.interceptors.GrpcConfigurator;
 import org.apache.dubbo.rpc.protocol.grpc.interceptors.ServerInterceptor;
 import org.apache.dubbo.rpc.protocol.grpc.interceptors.ServerTransportFilter;
 
-import io.grpc.CallOptions;
-import io.grpc.ManagedChannel;
-import io.grpc.ServerBuilder;
-import io.grpc.netty.GrpcSslContexts;
-import io.grpc.netty.NettyChannelBuilder;
-import io.grpc.netty.NettyServerBuilder;
-import io.netty.handler.ssl.ClientAuth;
-import io.netty.handler.ssl.SslContext;
-import io.netty.handler.ssl.SslContextBuilder;
-
 import javax.net.ssl.SSLException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -45,18 +44,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-import static org.apache.dubbo.common.constants.CommonConstants.CONSUMER_SIDE;
-import static org.apache.dubbo.common.constants.CommonConstants.PROVIDER_SIDE;
-import static org.apache.dubbo.common.constants.CommonConstants.SSL_ENABLED_KEY;
+import static org.apache.dubbo.common.constants.CommonConstants.*;
 import static org.apache.dubbo.remoting.Constants.DISPATCHER_KEY;
 import static org.apache.dubbo.rpc.Constants.EXECUTES_KEY;
-import static org.apache.dubbo.rpc.protocol.grpc.GrpcConstants.CLIENT_INTERCEPTORS;
-import static org.apache.dubbo.rpc.protocol.grpc.GrpcConstants.EXECUTOR;
-import static org.apache.dubbo.rpc.protocol.grpc.GrpcConstants.MAX_CONCURRENT_CALLS_PER_CONNECTION;
-import static org.apache.dubbo.rpc.protocol.grpc.GrpcConstants.MAX_INBOUND_MESSAGE_SIZE;
-import static org.apache.dubbo.rpc.protocol.grpc.GrpcConstants.MAX_INBOUND_METADATA_SIZE;
-import static org.apache.dubbo.rpc.protocol.grpc.GrpcConstants.SERVER_INTERCEPTORS;
-import static org.apache.dubbo.rpc.protocol.grpc.GrpcConstants.TRANSPORT_FILTERS;
+import static org.apache.dubbo.rpc.protocol.grpc.GrpcConstants.*;
 
 /**
  * Support gRPC configs in a Dubbo specific way.

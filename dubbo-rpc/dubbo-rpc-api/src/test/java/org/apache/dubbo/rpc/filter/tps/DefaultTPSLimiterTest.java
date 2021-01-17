@@ -19,13 +19,12 @@ package org.apache.dubbo.rpc.filter.tps;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.rpc.Invocation;
 import org.apache.dubbo.rpc.support.MockInvocation;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.apache.dubbo.common.constants.CommonConstants.INTERFACE_KEY;
-import static org.apache.dubbo.rpc.Constants.TPS_LIMIT_RATE_KEY;
 import static org.apache.dubbo.rpc.Constants.TPS_LIMIT_INTERVAL_KEY;
+import static org.apache.dubbo.rpc.Constants.TPS_LIMIT_RATE_KEY;
 
 public class DefaultTPSLimiterTest {
 
